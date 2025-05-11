@@ -3,7 +3,7 @@ pub fn add(left: u64, right: u64) -> u64 {
 }
 
 pub fn get() -> usize {
-    100
+    10
 }
 
 #[cfg(test)]
