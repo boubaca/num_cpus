@@ -27,11 +27,11 @@ pub fn zlib_compress(source: &[u8]) -> Vec<u8>  {
     }
 }
 
-pub fn zlib_uncompress(source: &[u8]) -> Vec<u8>  {
+pub fn zlib_uncompress(source: &[u8], len: i16) -> Vec<u8>  {
     unsafe {
         let source_len = source.len() as c_ulong;
-        let mut dest_len = source_len;
-        let mut dest = Vec::with_capacity(dest_len as usize);
+        let mut dest_len = len as c_ulong;
+        let mut dest = Vec::with_capacity(len as usize);
         uncompress(dest.as_mut_ptr(), &mut dest_len, source.as_ptr(), source_len);
         dest.set_len(dest_len as usize);
         dest
