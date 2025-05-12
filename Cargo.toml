@@ -1,6 +1,12 @@
 [package]
-name = "num_cpus"
+name = "num_cpus_barry"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["Boubacar Barry"]
+documentation = "https://boubacar.me"
+repository = " https://github.com/boubaca/num_cpus"
+
 
 [dependencies]
+libc = "1.0.0-alpha.1"
